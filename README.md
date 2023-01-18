@@ -94,25 +94,25 @@ The C4audit output for the contest can be found [here](add link to report) withi
 ## Scoping Details 
 ```
 - If you have a public code repo, please share it here:  
-- How many contracts are in scope?:   
-- Total SLoC for these contracts?:  
-- How many external imports are there?:  
-- How many separate interfaces and struct definitions are there for the contracts within scope?:  
-- Does most of your code generally use composition or inheritance?:   
-- How many external calls?:   
-- What is the overall line coverage percentage provided by your tests?:  
-- Is there a need to understand a separate part of the codebase / get context in order to audit this part of the protocol?:   
+- How many contracts are in scope?:   8
+- Total SLoC for these contracts?:  1765
+- How many external imports are there?: 0 
+- How many separate interfaces and struct definitions are there for the contracts within scope?:  9 structs + 4 structs only for storage for upgradable contracts. no internal interfaces only some external interfaces like OZ for ERC20s
+- Does most of your code generally use composition or inheritance?:   a mixture of both. We use in inheritance in the DripsHub but the Split and Drips logic are libraries used with composition.
+- How many external calls?:   0
+- What is the overall line coverage percentage provided by your tests?:  90
+- Is there a need to understand a separate part of the codebase / get context in order to audit this part of the protocol?:  false 
 - Please describe required context:   
-- Does it use an oracle?:  
-- Does the token conform to the ERC20 standard?:  
-- Are there any novel or unique curve logic or mathematical models?: 
-- Does it use a timelock function?:  
-- Is it an NFT?: 
-- Does it have an AMM?:   
-- Is it a fork of a popular project?:   
-- Does it use rollups?:   
-- Is it multi-chain?:  
-- Does it use a side-chain?: 
+- Does it use an oracle?:  false
+- Does the token conform to the ERC20 standard?:  we don't have a token
+- Are there any novel or unique curve logic or mathematical models?: https://v2.docs.drips.network/docs/the-protocol/technical-overview
+- Does it use a timelock function?:  no
+- Is it an NFT?: no
+- Does it have an AMM?: no  
+- Is it a fork of a popular project?:  false
+- Does it use rollups?:   false
+- Is it multi-chain?:  false
+- Does it use a side-chain?: false
 ```
 
 # Tests
