@@ -50,7 +50,7 @@ Under "SPONSORS ADD INFO HERE" heading below, include the following:
 - Total Prize Pool: $90,500 USDC
   - HM awards: $63,750 USDC 
   - QA report awards: $7,500 USDC 
-  - Gas report awards: 3,750 
+  - Gas report awards: 3,750 USDC
   - Judge + presort awards: $15,000 USDC 
   - Scout awards: $500 USDC 
 - Join [C4 Discord](https://discord.gg/code4rena) to register
