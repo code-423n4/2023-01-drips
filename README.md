@@ -1,58 +1,10 @@
-# ✨ So you want to sponsor a contest
-
-This `README.md` contains a set of checklists for our contest collaboration.
-
-Your contest will use two repos: 
-- **a _contest_ repo** (this one), which is used for scoping your contest and for providing information to contestants (wardens)
-- **a _findings_ repo**, where issues are submitted (shared with you after the contest) 
-
-Ultimately, when we launch the contest, this contest repo will be made public and will contain the smart contracts to be reviewed and all the information needed for contest participants. The findings repo will be made public after the contest report is published and your team has mitigated the identified issues.
-
-Some of the checklists in this doc are for **C4 (🐺)** and some of them are for **you as the contest sponsor (⭐️)**.
-
----
-
-# Repo setup
-
-## ⭐️ Sponsor: Add code to this repo
-
-- [ ] Create a PR to this repo with the below changes:
-- [ ] Provide a self-contained repository with working commands that will build (at least) all in-scope contracts, and commands that will run tests producing gas reports for the relevant contracts.
-- [ ] Make sure your code is thoroughly commented using the [NatSpec format](https://docs.soliditylang.org/en/v0.5.10/natspec-format.html#natspec-format).
-- [ ] Please have final versions of contracts and documentation added/updated in this repo **no less than 24 hours prior to contest start time.**
-- [ ] Be prepared for a 🚨code freeze🚨 for the duration of the contest — important because it establishes a level playing field. We want to ensure everyone's looking at the same code, no matter when they look during the contest. (Note: this includes your own repo, since a PR can leak alpha to our wardens!)
-
-
----
-
-## ⭐️ Sponsor: Edit this README
-
-Under "SPONSORS ADD INFO HERE" heading below, include the following:
-
-- [ ] Modify the bottom of this `README.md` file to describe how your code is supposed to work with links to any relevent documentation and any other criteria/details that the C4 Wardens should keep in mind when reviewing. ([Here's a well-constructed example.](https://github.com/code-423n4/2022-08-foundation#readme))
-  - [ ] When linking, please provide all links as full absolute links versus relative links
-  - [ ] All information should be provided in markdown format (HTML does not render on Code4rena.com)
-- [ ] Under the "Scope" heading, provide the name of each contract and:
-  - [ ] source lines of code (excluding blank lines and comments) in each
-  - [ ] external contracts called in each
-  - [ ] libraries used in each
-- [ ] Describe any novel or unique curve logic or mathematical models implemented in the contracts
-- [ ] Does the token conform to the ERC-20 standard? In what specific ways does it differ?
-- [ ] Describe anything else that adds any special logic that makes your approach unique
-- [ ] Identify any areas of specific concern in reviewing the code
-- [ ] Optional / nice to have: pre-record a high-level overview of your protocol (not just specific smart contract functions). This saves wardens a lot of time wading through documentation.
-- [ ] See also: [this checklist in Notion](https://code4rena.notion.site/Key-info-for-Code4rena-sponsors-f60764c4c4574bbf8e7a6dbd72cc49b4#0cafa01e6201462e9f78677a39e09746)
-- [ ] Delete this checklist and all text above the line below when you're ready.
-
----
-
 # Drips Protocol contest details
 - Total Prize Pool: $90,500 USDC
-  - HM awards: $63,750 USDC 
-  - QA report awards: $7,500 USDC 
+  - HM awards: $63,750 USDC
+  - QA report awards: $7,500 USDC
   - Gas report awards: 3,750 USDC
-  - Judge + presort awards: $15,000 USDC 
-  - Scout awards: $500 USDC 
+  - Judge + presort awards: $15,000 USDC
+  - Scout awards: $500 USDC
 - Join [C4 Discord](https://discord.gg/code4rena) to register
 - Submit findings [using the C4 form](https://code4rena.com/contests/2023-01-drips-protocol-contest/submit)
 - [Read our guidelines for more details](https://docs.code4rena.com/roles/wardens)
@@ -69,46 +21,71 @@ The C4audit output for the contest can be found [here](add link to report) withi
 
 # Overview
 
-*Please provide some context about the code being audited, and identify any areas of specific concern in reviewing the code. (This is a good place to link to your docs, if you have them.)*
+Radicle Drips is an EVM blockchain protocol for streaming and splitting ERC-20 tokens.
+See [docs](https://docs.drips.network) for a high-level introduction and documentation.
+You can also watch a [video introduction](https://www.youtube.com/watch?v=sL3RrBDkPWA) into the codebase.
 
 # Scope
 
-*List all files in scope in the table below (along with hyperlinks) -- and feel free to add notes here to emphasize areas of focus.*
+| Contract                                                  | SLOC  | Purpose | Libraries used
+| -                                                         | -     | -       | -
+[DripsHub.sol](src/DripsHub.sol)                            | 259   | The smart contract implementing Drips protocol, it exposes the entire protocol API. | [openzeppelin/token/ERC20/IERC20.sol](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.8.0/contracts/token/ERC20/IERC20.sol) [openzeppelin/token/ERC20/utils/SafeERC20.sol](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.8.0/contracts/token/ERC20/utils/SafeERC20.sol)
+[Drips.sol](src/Drips.sol)                                  | 672   | The dripping logic for DripsHub, it exposes no public functions, and it acts as a library. |
+[Splits.sol](src/Splits.sol)                                | 151   | The splitting logic for DripsHub, it exposes no public functions, and it acts as a library. |
+[AddressDriver.sol](src/AddressDriver.sol)                  |  74   | The DripsHub driver implementing address-based users identification for the protocol. | [openzeppelin/metatx/ERC2771Context.sol](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.8.0/contracts/metatx/ERC2771Context.sol) [openzeppelin/token/ERC20/utils/SafeERC20.sol](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.8.0/contracts/token/ERC20/utils/SafeERC20.sol)
+[NFTDriver.sol](src/NFTDriver.sol)                          | 149   | The DripsHub driver implementing NFT-based users identification for the protocol. | [openzeppelin/metatx/ERC2771Context.sol](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.8.0/contracts/metatx/ERC2771Context.sol) [openzeppelin/token/ERC20/utils/SafeERC20.sol](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.8.0/contracts/token/ERC20/utils/SafeERC20.sol) [openzeppelin/utils/StorageSlot.sol](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.8.0/contracts/utils/StorageSlot.sol) [openzeppelin/token/ERC721/extensions/ERC721Burnable.sol](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.8.0/contracts/token/ERC721/extensions/ERC721Burnable.sol)
+[ImmutableSplitsDriver.sol](src/ImmutableSplitsDriver.sol)  |  35   | The DripsHub driver implementing simplified user identification only capable of creating splits configurations that can never be updated. | [openzeppelin/utils/StorageSlot.sol](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.8.0/contracts/utils/StorageSlot.sol)
+[Managed.sol](src/Managed.sol)                              |  86   | The mix-in adding upgrading, pausing and ownership management to smart contracts. | [openzeppelin/proxy/utils/UUPSUpgradeable.sol](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.8.0/contracts/proxy/utils/UUPSUpgradeable.sol) [openzeppelin/proxy/ERC1967/ERC1967Proxy.sol](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.8.0/contracts/proxy/ERC1967/ERC1967Proxy.sol) [openzeppelin/utils/StorageSlot.sol](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.8.0/contracts/utils/StorageSlot.sol) [openzeppelin/utils/structs/EnumerableSet.sol](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.8.0/contracts/utils/structs/EnumerableSet.sol)
+[Caller.sol](src/Caller.sol)                                |  77   | The generic implementation of batching, approvals and signed permissions for smart contracts. | [openzeppelin/utils/Address.sol](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.8.0/contracts/utils/Address.sol) [openzeppelin/utils/cryptography/draft-EIP712.sol](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.8.0/contracts/utils/cryptography/draft-EIP712.sol) [openzeppelin/metatx/ERC2771Context.sol](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.8.0/contracts/metatx/ERC2771Context.sol) [openzeppelin/utils/structs/EnumerableSet.sol](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.8.0/contracts/utils/structs/EnumerableSet.sol)
 
-*For line of code counts, we recommend using [cloc](https://github.com/AlDanial/cloc).* 
-
-| Contract | SLOC | Purpose | Libraries used |  
-| ----------- | ----------- | ----------- | ----------- |
-| [contracts/folder/sample.sol](contracts/folder/sample.sol) | 123 | This contract does XYZ | [`@openzeppelin/*`](https://openzeppelin.com/contracts/) |
 
 ## Out of scope
 
-*List any files/contracts that are out of scope for this audit.*
+Drips protocol is 100% on-chain and self-contained, except ERC-20 tokens it works with and drivers.
+There are no off-chain actors, and no 3rd party services like oracles or DEX-es involved.
+
+If malicious or unexpected behavior of an ERC-20 contract is a cause of loss or a tool of theft of these ERC-20 tokens, it's not considered an issue in scope.
+If such ERC-20 contract can cause loss or theft of other ERC-20 tokens without collusion, it's considered an issue in scope.
+
+The protocol is extendable with drivers, and drivers should not be able to break the protocol.
+If a malicious driver causes harm to users with IDs in range managed by that driver, it's not considered an issue in scope.
+By harm we mean loss or theft of funds, but also harmful changes to configuration,
+e.g. the drips configuration, which may cause dripping to unwanted receivers,
+or the splits configuration, which may redirect received funds to unwanted receivers.
+If a malicious driver can harm users with IDs outside of range managed by that driver, it's considered an issue in scope.
 
 # Additional Context
 
-*Describe any novel or unique curve logic or mathematical models implemented in the contracts*
+## Drivers
 
-*Sponsor, please confirm/edit the information below.*
+The protocol at its core operates on abstract user IDs.
+A contract can be registered in DripsHub as a drivers, then it gets assigned an exclusive, large range or user IDs.
+The driver is the only entity that can perform important operations for user IDs it has assigned, e.g. updating configurations or transferring funds.
+The driver can then expose a custom API and introduce custom rules about controlling its user IDs.
+For example the `AddressDriver` assigns 1-to-1 its user IDs to all existing addresses.
+Via its API for each user ID it allows the assigned address to perform important operations in DripsHub.
+Another driver is `NFTDriver`, which assigns user IDs to token IDs.
+Its API only allows the current NFT holder to perform important operations for the assigned user ID.
+The protocol lets anybody register new drivers, it's supposed to invite integrations with 3rd party identity systems.
 
-## Scoping Details 
+## Scoping Details
 ```
-- If you have a public code repo, please share it here:  
+- If you have a public code repo, please share it here: https://github.com/radicle-dev/drips-contracts
 - How many contracts are in scope?:   8
-- Total SLoC for these contracts?:  1765
-- How many external imports are there?: 0 
+- Total SLoC for these contracts?:  1503
+- How many external imports are there?: 0
 - How many separate interfaces and struct definitions are there for the contracts within scope?:  9 structs + 4 structs only for storage for upgradable contracts. no internal interfaces only some external interfaces like OZ for ERC20s
 - Does most of your code generally use composition or inheritance?:   a mixture of both. We use in inheritance in the DripsHub but the Split and Drips logic are libraries used with composition.
 - How many external calls?:   0
 - What is the overall line coverage percentage provided by your tests?:  90
-- Is there a need to understand a separate part of the codebase / get context in order to audit this part of the protocol?:  false 
-- Please describe required context:   
+- Is there a need to understand a separate part of the codebase / get context in order to audit this part of the protocol?:  false
+- Please describe required context:
 - Does it use an oracle?:  false
 - Does the token conform to the ERC20 standard?:  we don't have a token
 - Are there any novel or unique curve logic or mathematical models?: https://v2.docs.drips.network/docs/the-protocol/technical-overview
 - Does it use a timelock function?:  no
-- Is it an NFT?: no
-- Does it have an AMM?: no  
+- Is it an NFT?: yes
+- Does it have an AMM?: no
 - Is it a fork of a popular project?:  false
 - Does it use rollups?:   false
 - Is it multi-chain?:  false
@@ -117,6 +94,22 @@ The C4audit output for the contest can be found [here](add link to report) withi
 
 # Tests
 
-*Provide every step required to build the project from a fresh git clone, as well as steps to run the tests with a gas report.* 
+Radicle Drips Hub uses [Foundry](https://github.com/foundry-rs/foundry) for development.
+You can install it using [foundryup](https://github.com/foundry-rs/foundry#installation).
 
-*Note: Many wardens run Slither as a first pass for testing.  Please document any known errors with no workaround.* 
+The codebase is statically checked with [Slither](https://github.com/crytic/slither) version 0.9.2.
+Here are the [installation instructions](https://github.com/crytic/slither#how-to-install).
+
+## Running tests
+```bash
+forge test
+```
+
+All the tests are supposed to pass. Foundry by default prints the total gas usage for each test.
+
+## Running Slither
+```bash
+slither .
+```
+
+There are supposed to be no issues found.
