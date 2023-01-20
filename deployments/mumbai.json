@@ -1,0 +1,18 @@
+{
+    "Network":                      "polygon-mumbai",
+    "Deployer address":             "0x341a08926dCa7fa7D135F96E4d76b696e5f6d38d",
+    "Caller":                       "0xd6D78Cf6dcBAf6D3468b0b07A77a8b612d3D75bf",
+    "DripsHub":                     "0xBb5FFedFa8B93b017652076113c9a759691d4260",
+    "DripsHub logic":               "0x519027b1c61C8d7ac4bdE38DA41D613Ed30F427f",
+    "DripsHub cycle seconds":       "604800",
+    "AddressDriver":                "0x2139829c30916B6a03C85f85cD200a8b6F160e5c",
+    "AddressDriver logic":          "0xd449804b64A7b11cA07e1442bfb9EEC87C5520d6",
+    "AddressDriver ID":             "0",
+    "NFTDriver":                    "0x7A5044c79fE4ed55B8Da240d894558BC203cf248",
+    "NFTDriver logic":              "0x6115F78f21D53A19280f2E7D85F117344069F3d5",
+    "NFTDriver ID":                 "1",
+    "ImmutableSplitsDriver":        "0x7e7f39905908931528C8Ec2D049ABB275C3351b4",
+    "ImmutableSplitsDriver logic":  "0x74392f90aD8bC9E4260B6A0A1661d295e612ECA7",
+    "ImmutableSplitsDriver ID":     "2",
+    "Commit hash":                  "ea155a3fe034a2a373403c3a9168184a78e3f1d3"
+}

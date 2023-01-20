@@ -1,0 +1,18 @@
+{
+    "Network":                      "goerli",
+    "Deployer address":             "0x341a08926dCa7fa7D135F96E4d76b696e5f6d38d",
+    "Caller":                       "0xa084EB22827a5e9BB49a63AE76f66ac47A607B88",
+    "DripsHub":                     "0xc59fDC9b74478cE30BFECF8023006b9323078189",
+    "DripsHub logic":               "0x68401644F791293AA46DF37D70a6b4F1A7e88Ab7",
+    "DripsHub cycle seconds":       "604800",
+    "AddressDriver":                "0xeD5423aD0ee5b227341911a31C930f81Aa49d434",
+    "AddressDriver logic":          "0xDfB1364ec55cA15E1cc286933776e70252EC1e39",
+    "AddressDriver ID":             "0",
+    "NFTDriver":                    "0x11728764656A53913Dd47AaFd1a59D5A8d6EE226",
+    "NFTDriver logic":              "0x0D28fC3Ca6d5C5d000c987f9067ECabc4fF4AD69",
+    "NFTDriver ID":                 "1",
+    "ImmutableSplitsDriver":        "0x7Ee78abb82aB01C5c7f244f0e3c9a41413f0c6eF",
+    "ImmutableSplitsDriver logic":  "0x5C8965C850884D5a7E655e3568F591f5f5615f18",
+    "ImmutableSplitsDriver ID":     "2",
+    "Commit hash":                  "ea155a3fe034a2a373403c3a9168184a78e3f1d3"
+}
