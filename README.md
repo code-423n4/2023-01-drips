@@ -22,8 +22,14 @@ The C4audit output for the contest can be found [here](add link to report) withi
 # Overview
 
 Radicle Drips is an EVM blockchain protocol for streaming and splitting ERC-20 tokens.
-See [docs](https://docs.drips.network) for a high-level introduction and documentation.
-You can also watch a [video introduction](https://www.youtube.com/watch?v=sL3RrBDkPWA) into the codebase.
+
+## Docs
+
+See [docs](https://v2.docs.drips.network) for a high-level introduction and documentation.
+
+## Video introduction
+
+Watch a quick [video introduction](https://www.youtube.com/watch?v=sL3RrBDkPWA) into the codebase.
 
 # Scope
 
