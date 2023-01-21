@@ -1,4 +1,5 @@
 # Drips Protocol contest details
+
 - Total Prize Pool: $90,500 USDC
   - HM awards: $63,750 USDC
   - QA report awards: $7,500 USDC
@@ -33,15 +34,14 @@ Watch a quick [video introduction](https://www.youtube.com/watch?v=sL3RrBDkPWA) 
 
 | Contract                                                  | SLOC  | Purpose | Libraries used
 | -                                                         | -     | -       | -
-[DripsHub.sol](src/DripsHub.sol)                            | 259   | The smart contract implementing Drips protocol, it exposes the entire protocol API. | [openzeppelin/token/ERC20/IERC20.sol](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.8.0/contracts/token/ERC20/IERC20.sol) [openzeppelin/token/ERC20/utils/SafeERC20.sol](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.8.0/contracts/token/ERC20/utils/SafeERC20.sol)
-[Drips.sol](src/Drips.sol)                                  | 672   | The dripping logic for DripsHub, it exposes no public functions, and it acts as a library. |
-[Splits.sol](src/Splits.sol)                                | 151   | The splitting logic for DripsHub, it exposes no public functions, and it acts as a library. |
-[AddressDriver.sol](src/AddressDriver.sol)                  |  74   | The DripsHub driver implementing address-based users identification for the protocol. | [openzeppelin/metatx/ERC2771Context.sol](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.8.0/contracts/metatx/ERC2771Context.sol) [openzeppelin/token/ERC20/utils/SafeERC20.sol](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.8.0/contracts/token/ERC20/utils/SafeERC20.sol)
-[NFTDriver.sol](src/NFTDriver.sol)                          | 149   | The DripsHub driver implementing NFT-based users identification for the protocol. | [openzeppelin/metatx/ERC2771Context.sol](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.8.0/contracts/metatx/ERC2771Context.sol) [openzeppelin/token/ERC20/utils/SafeERC20.sol](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.8.0/contracts/token/ERC20/utils/SafeERC20.sol) [openzeppelin/utils/StorageSlot.sol](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.8.0/contracts/utils/StorageSlot.sol) [openzeppelin/token/ERC721/extensions/ERC721Burnable.sol](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.8.0/contracts/token/ERC721/extensions/ERC721Burnable.sol)
-[ImmutableSplitsDriver.sol](src/ImmutableSplitsDriver.sol)  |  35   | The DripsHub driver implementing simplified user identification only capable of creating splits configurations that can never be updated. | [openzeppelin/utils/StorageSlot.sol](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.8.0/contracts/utils/StorageSlot.sol)
-[Managed.sol](src/Managed.sol)                              |  86   | The mix-in adding upgrading, pausing and ownership management to smart contracts. | [openzeppelin/proxy/utils/UUPSUpgradeable.sol](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.8.0/contracts/proxy/utils/UUPSUpgradeable.sol) [openzeppelin/proxy/ERC1967/ERC1967Proxy.sol](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.8.0/contracts/proxy/ERC1967/ERC1967Proxy.sol) [openzeppelin/utils/StorageSlot.sol](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.8.0/contracts/utils/StorageSlot.sol) [openzeppelin/utils/structs/EnumerableSet.sol](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.8.0/contracts/utils/structs/EnumerableSet.sol)
-[Caller.sol](src/Caller.sol)                                |  77   | The generic implementation of batching, approvals and signed permissions for smart contracts. | [openzeppelin/utils/Address.sol](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.8.0/contracts/utils/Address.sol) [openzeppelin/utils/cryptography/draft-EIP712.sol](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.8.0/contracts/utils/cryptography/draft-EIP712.sol) [openzeppelin/metatx/ERC2771Context.sol](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.8.0/contracts/metatx/ERC2771Context.sol) [openzeppelin/utils/structs/EnumerableSet.sol](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.8.0/contracts/utils/structs/EnumerableSet.sol)
-
+[Drips.sol](https://github.com/code-423n4/2023-01-drips/blob/main/src/Drips.sol)                                  | 672   | The dripping logic for DripsHub, it exposes no public functions, and it acts as a library. |
+[DripsHub.sol](https://github.com/code-423n4/2023-01-drips/blob/main/src/DripsHub.sol)                            | 259   | The smart contract implementing Drips protocol, it exposes the entire protocol API. | [openzeppelin/token/ERC20/IERC20.sol](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.8.0/contracts/token/ERC20/IERC20.sol) [openzeppelin/token/ERC20/utils/SafeERC20.sol](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.8.0/contracts/token/ERC20/utils/SafeERC20.sol)
+[Splits.sol](https://github.com/code-423n4/2023-01-drips/blob/main/src/Splits.sol)                                | 151   | The splitting logic for DripsHub, it exposes no public functions, and it acts as a library. |
+[NFTDriver.sol](https://github.com/code-423n4/2023-01-drips/blob/main/src/NFTDriver.sol)                          | 149   | The DripsHub driver implementing NFT-based users identification for the protocol. | [openzeppelin/metatx/ERC2771Context.sol](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.8.0/contracts/metatx/ERC2771Context.sol) [openzeppelin/token/ERC20/utils/SafeERC20.sol](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.8.0/contracts/token/ERC20/utils/SafeERC20.sol) [openzeppelin/utils/StorageSlot.sol](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.8.0/contracts/utils/StorageSlot.sol) [openzeppelin/token/ERC721/extensions/ERC721Burnable.sol](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.8.0/contracts/token/ERC721/extensions/ERC721Burnable.sol)
+[Managed.sol](https://github.com/code-423n4/2023-01-drips/blob/main/src/Managed.sol)                              |  86   | The mix-in adding upgrading, pausing and ownership management to smart contracts. | [openzeppelin/proxy/utils/UUPSUpgradeable.sol](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.8.0/contracts/proxy/utils/UUPSUpgradeable.sol) [openzeppelin/proxy/ERC1967/ERC1967Proxy.sol](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.8.0/contracts/proxy/ERC1967/ERC1967Proxy.sol) [openzeppelin/utils/StorageSlot.sol](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.8.0/contracts/utils/StorageSlot.sol) [openzeppelin/utils/structs/EnumerableSet.sol](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.8.0/contracts/utils/structs/EnumerableSet.sol)
+[Caller.sol](https://github.com/code-423n4/2023-01-drips/blob/main/src/Caller.sol)                                |  77   | The generic implementation of batching, approvals and signed permissions for smart contracts. | [openzeppelin/utils/Address.sol](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.8.0/contracts/utils/Address.sol) [openzeppelin/utils/cryptography/draft-EIP712.sol](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.8.0/contracts/utils/cryptography/draft-EIP712.sol) [openzeppelin/metatx/ERC2771Context.sol](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.8.0/contracts/metatx/ERC2771Context.sol) [openzeppelin/utils/structs/EnumerableSet.sol](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.8.0/contracts/utils/structs/EnumerableSet.sol)
+[AddressDriver.sol](https://github.com/code-423n4/2023-01-drips/blob/main/src/AddressDriver.sol)                  |  74   | The DripsHub driver implementing address-based users identification for the protocol. | [openzeppelin/metatx/ERC2771Context.sol](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.8.0/contracts/metatx/ERC2771Context.sol) [openzeppelin/token/ERC20/utils/SafeERC20.sol](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.8.0/contracts/token/ERC20/utils/SafeERC20.sol)
+[ImmutableSplitsDriver.sol](https://github.com/code-423n4/2023-01-drips/blob/main/src/ImmutableSplitsDriver.sol)  |  35   | The DripsHub driver implementing simplified user identification only capable of creating splits configurations that can never be updated. | [openzeppelin/utils/StorageSlot.sol](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.8.0/contracts/utils/StorageSlot.sol)
 
 ## Out of scope
 
@@ -73,6 +73,7 @@ Its API only allows the current NFT holder to perform important operations for t
 The protocol lets anybody register new drivers, it's supposed to invite integrations with 3rd party identity systems.
 
 ## Scoping Details
+
 ```
 - If you have a public code repo, please share it here: https://github.com/radicle-dev/drips-contracts
 - How many contracts are in scope?:   8
@@ -105,13 +106,30 @@ The codebase is statically checked with [Slither](https://github.com/crytic/slit
 Here are the [installation instructions](https://github.com/crytic/slither#how-to-install).
 
 ## Running tests
+
+First, you need to install the dependencies linked in `/lib`:
+
 ```bash
+# Install dependencies
+forge install
+```
+
+Then you can run the tests:
+
+```bash
+# Running tests
 forge test
 ```
 
-All the tests are supposed to pass. Foundry by default prints the total gas usage for each test.
+All the tests are supposed to pass. Foundry by default prints the total gas usage for each test, but for a more detailed gas report table, you can use the following:
+
+```bash
+# Running tests and generate a gas report table
+forge test --gas-report
+```
 
 ## Running Slither
+
 ```bash
 slither .
 ```
