@@ -1,0 +1,878 @@
+==============================================================
+Guild: Code4rena
+Channel: ARCHIVE-Q1-2023 / drips-jan25
+==============================================================
+
+[01/20/2023 22:55] itsmetechjay (pinned)
+👋 Hello and welcome to the contest channel for the $90,500 USDC **Drips Protocol** contest!
+
+📆 Contest opens Wednesday, 25 January 2023 20:00 (20:00 UTC) and runs through Friday, 03 February 2023 20:00 (20:00 UTC) (9 days).
+
+Please give a warm welcome to the Drips Protocol team, particularly @xmxanuel and @IgorZuk, who will be available for questions either here in the channel or via DM.
+
+We'll be posting relevant links, documentation, etc. here, so if you intend to participate in this contest, consider enabling notifications for this channel. 🐺 ⏰
+
+Contest Page: https://code4rena.com/contests/2023-01-drips-protocol-contest
+
+{Embed}
+https://code4rena.com/contests/2023-01-drips-protocol-contest
+Code4rena Drips Protocol contest
+$90,500 USDC
+25 January 2023—3 February 2023
+Code4rena - ARCHIVE-Q1-2023 - drips-jan25 [1066127439526375444].txt_Files/C4-banner-7C19B.png
+
+{Reactions}
+🚀 (6) 
+
+[01/20/2023 22:56] itsmetechjay
+Pinned a message.
+
+
+[01/21/2023 13:52] mahdi9606
+is it a public contest ?
+
+{Reactions}
+👍🏻 
+
+[01/22/2023 13:21] pimhakkert
+Can't wait to get started!
+
+{Reactions}
+👍 (2) 
+
+[01/23/2023 10:40] xmxanuel
+Yes. It is a public contest
+
+
+[01/24/2023 17:09] kartoonjoy (pinned)
+**REMINDER:** Using ChatGPT, GPT-3, or similar tools for contest submissions is prohibited, and will result in all of your contest submissions being ruled invalidated. Additional penalties may also be applied at the discretion of judges and C4 staff.
+
+{Reactions}
+👍 (2) 
+
+[01/24/2023 17:09] kartoonjoy
+Pinned a message.
+
+
+[01/25/2023 11:56] Oyunbzz#0385
+I hope I ll take this time
+
+{Reactions}
+🚀 (3) 
+
+[01/25/2023 19:50] kartoonjoy
+Hi @supernova - you still good to run the C4udit?
+
+
+[01/25/2023 19:51] supernovahs
+Yup
+
+{Reactions}
+thankyou 
+
+[01/25/2023 20:10] supernovahs (pinned)
+Automated Findings: 
+https://gist.github.com/supernovahs/ed0ecfe251e3adf824bb669be981bca9
+
+{Reactions}
+thankyou 
+
+[01/25/2023 20:11] kartoonjoy
+Pinned a message.
+
+
+[01/25/2023 20:14] kartoonjoy (pinned)
+Wardens, please note that the automated findings output has been posted and added to pinned posts. These are considered publicly known issues and are not eligible for awards.
+
+Automated findings: https://gist.github.com/supernovahs/ed0ecfe251e3adf824bb669be981bca9
+
+
+[01/25/2023 20:15] kartoonjoy
+Pinned a message.
+
+
+[01/25/2023 20:43] xmxanuel
+@here 
+
+The contest has started 🚀  We are looking forward to your contributions.
+
+ A good starting point is our **documentation** and our **introduction video** for the C4 contest.
+
+https://v2.docs.drips.network/docs/the-protocol/overview
+https://www.youtube.com/watch?v=sL3RrBDkPWA
+
+ Don't hesitate to reach out to @IgorZuk or to myself @xmxanuel  for questions. We are here to help. 🙌
+
+{Embed}
+https://v2.docs.drips.network/docs/the-protocol/overview
+Overview · Drips docs
+There are three ways in which funds can be flowing in Drips protocol:
+
+{Embed}
+Igor Żuk
+https://www.youtube.com/watch?v=sL3RrBDkPWA
+Drips protocol - Code4rena introduction
+00:00 Protocol introduction
+04:17 Dripping algorithm
+13:22 Dripping implementation
+26:37 Splitting
+30:33 Squeezing
+37:45 Code4rena tips
+Code4rena - ARCHIVE-Q1-2023 - drips-jan25 [1066127439526375444].txt_Files/maxresdefault-31320.jpg
+
+{Reactions}
+🙌 (9) ❤️ (3) 💧 (3) 
+
+[01/25/2023 21:12] patrickalphac
+👋
+
+{Reactions}
+👋🏻 (17) 
+
+[01/26/2023 03:51] Aeros#7185
+Hello frens! 👊
+
+{Reactions}
+👋 (2) 
+
+[01/26/2023 03:59] eyexploit
+hey @xmxanuel , could you explain!!, in docs it says in Splitting section that `All the list entries must add up to no more than 100%, in which case the receiving user won't get any funds, and will transfer all received funds to others`, are others it mean by under 0-200 entries ?, and Is there any another way by which receiver can be fund if he end up listing out of 200?
+
+
+[01/26/2023 08:43] igorzuk
+Hi @eyexploit,
+> are others it mean by under 0-200 entries ?,
+I'm not sure if I understand your question, correct me if I'm wrong. The "others" who will receive funds split by you are the users on the list. Examples:
+- your list is `user 1: 100%`: user1 will get 100% of funds you split, you'll get 0%
+- your list is `user1: 20%`: user1 will get 20% and you will get 80%.
+- your list is `user1: 30%, user2: 70%`: user 1 will get 30%, user2 70%, you will get 0%
+- your list is `user1: 15%, user2: 21%`: user 1 will get 15%, user2 21%, you will get 64%
+- your list is `user1: 90%, user2: 11%`: invalid, adds up to more than 100%
+- your list is a list of 200 users, each of them getting 0.05%: the users on the list get 10% in total, you get 90%
+- your list is a list of 201 users: invalid, list too long
+The limitation of 200 splits receivers is purely a gas limitation. If the block gas limit was twice as high, the limit would be probably 400.
+
+{Reactions}
+👍 (3) 
+
+[01/26/2023 08:47] igorzuk
+> Is there any another way by which receiver can be fund if he end up listing out of 200?
+It doesn't matter how **many** splits receivers the user has set up, but how **many percent** that user is splitting to others. If they split 100%, there's no way to force them to accept your funds into their wallet, everything will be split and given away. This is useful in cases like dummy users implementing "awesome lists", e.g. a user advertised as "10 awesome FOSS projects", who splits 100% to 10 said projects. You can then drip, split or give to that dummy user and your funds will support the 10 projects (eventually).
+
+
+[01/26/2023 09:01] eyexploit
+got it 👍
+
+{Reactions}
+🙌 (2) 
+
+[01/26/2023 10:27] holladiewaldfee0706
+@IgorZuk sent DM
+
+{Reactions}
+👍 (2) 
+
+[01/26/2023 18:32] mahdi9606
+hi , I can't understand purpose of the following line of code in _setDrip function , Can someone explain  ?
+
+
+[01/26/2023 18:32] mahdi9606
+if (realBalanceDelta < -currBalance) {
+                realBalanceDelta = -currBalance;
+            }
+
+
+[01/26/2023 19:32] xmxanuel
+hey @mahdikarimi
+
+
+[01/26/2023 19:38] xmxanuel
+The Code is dealing with the following. We have one variable which indicates if you want to topUp or withdraw funds from a sender configuration. 
+
+`balanceDelta` => negative means the sender wants to withdraw funds.
+
+For example if you want to withdraw `-100` Dai but your actual `currBalance` is only `80 Dai`. The `realBalanceDelta` should be `-80 Dai`. Because it is not possible to withdraw the full 100 Dai. This part of handles this case.
+
+If you look at this PR we are discussing these lines of code with some examples
+https://github.com/radicle-dev/drips-contracts/pull/232
+
+
+[01/26/2023 19:44] xmxanuel
+```solidity
+  realBalanceDelta = balanceDelta;
+  // Cap `realBalanceDelta` at withdrawal of the entire `currBalance`
+  if (realBalanceDelta < -currBalance) {
+      realBalanceDelta = -currBalance;
+  }
+```
+My example:
+```
+realBalanceDelta = -100
+if(-100 < -80) {
+   realBalanceDelta = -80
+}
+```
+(Doing it in this way is a bit counterintuitive but allowed the removal of some local helper variables as discussed in the PR)
+
+{Reactions}
+👍 (3) 
+
+[01/26/2023 19:46] mahdi9606
+got it 👍
+
+{Reactions}
+👌 (2) 
+
+[01/26/2023 19:56] aba1842
+> Users to not need to have ETH in their accounts ...
+a small typo in the documentation FAQ: "to" instead of "do". Just an FYI
+
+{Reactions}
+🙌 
+
+[01/26/2023 21:14] mahdi9606
+what is difference between userid and receivers in _setDrip ?
+
+
+[01/26/2023 21:15] mahdi9606
+userid isn't id of the user that receives drips ?
+
+
+[01/26/2023 21:23] xmxanuel
+@mahdikarimi  In the _`setDrips` function the userId is the sender's userId
+
+
+[01/26/2023 21:24] xmxanuel
+one sender can send to multiple different receivers
+
+
+[01/27/2023 12:59] mahdi9606
+I mean the userid is id of sender or receiver ?
+
+
+[01/27/2023 13:00] igorzuk
+The sender
+
+
+[01/27/2023 13:02] mahdi9606
+So every drip stores configuration of both receiving and streaming funds for a user right ?
+
+
+[01/27/2023 13:02] igorzuk
+What do you mean by "a drip stores"? There are a few places you could be referenceing
+
+
+[01/27/2023 13:03] mahdi9606
+dripstate i mean
+
+
+[01/27/2023 13:04] igorzuk
+The result of `function dripsState(uint256 userId, IERC20 erc20)`, right? It returns the hash of the drips configuration of the user acting as a sender, it's a hash of the list of their receivers.
+
+
+[01/27/2023 13:06] mahdi9606
+DripsState storage state = _dripsStorage().states[assetId][userId];
+
+
+[01/27/2023 13:08] mahdi9606
+in _receiveDripsResult
+
+
+[01/27/2023 13:08] igorzuk
+Ah, sorry about the confusion 😄
+It's both:
+
+
+[01/27/2023 13:08] igorzuk
+```solidity
+struct DripsState {
+    bytes32 dripsHistoryHash; // sender
+    mapping(uint256 => uint32[2 ** 32]) nextSqueezed;  // sender
+    bytes32 dripsHash; // sender
+    uint32 nextReceivableCycle; // receiver
+    uint32 updateTime; // sender
+    uint32 maxEnd; // sender
+    uint128 balance; // sender
+    uint32 currCycleConfigs; // sender
+    mapping(uint32 => AmtDelta) amtDeltas; // receiver
+}
+```
+
+
+[01/27/2023 13:09] xmxanuel
+A user can be a sender and receiver. The DripsState contains information about both
+
+
+[01/27/2023 13:10] mahdi9606
+right now it makes sense 👍
+
+{Reactions}
+🙌 (2) 
+
+[01/27/2023 15:29] patrickalphac
+So with the `ImmutableSplitsDriver` , it's not the intention for someone setting up splits through that driver to also set up a drip? 
+
+ie: I want to set up a drip that uses that split I just created. There weren't any tests in `ImmutableSplitsDriver.t.sol` for sending or collecting payments using this driver. 
+
+So... looks like someone else would be able to `setDrips` with the userId of the `ImmutableSplitsDriver`. 
+
+I think I just talked myself into the answer. But just for clarity. The `ImmutableSplitsDriver` is intended to not setup drips yes? It can only be sent drips.
+
+{Reactions}
+👍 
+
+[01/27/2023 15:55] igorzuk
+Yes, `ImmutableSplitsDriver` can't be used as a drips sender, it can only receive and then split 100% to others
+
+{Reactions}
+👍 
+
+[01/27/2023 15:55] igorzuk
+That's why it can't even `collect`, there's supposed to be nothing to collect.
+
+
+[01/27/2023 15:56] igorzuk
+I don't think that `ImmutableSplitsDriver` will ever be able to set up drips, it doesn't seem useful.
+
+
+[01/27/2023 15:59] xmxanuel
+The call to public method `DripsHub.split()` will trigger the forwarding for an `ImmutableSplit`
+
+
+[01/28/2023 12:40] eyexploit
+@IgorZuk dmed you
+
+{Reactions}
+👍 
+
+[01/28/2023 15:20] menox#8974
+Hello, why in the Drivers there is no function to call the updateDriverAddress on the dripHub contract? @IgorZuk
+
+
+[01/28/2023 15:52] h0wlu
+Hi @IgorZuk dmed
+
+{Reactions}
+👍 
+
+[01/28/2023 15:59] igorzuk
+Hi @menox,
+Each driver can call `updateDriverAddress` on `DripsHub` to update the address controlling their driver ID. Our drivers don't need this, because they are upgradeable and we don't want to change their addresses, but if you write your own driver, you could implement a migration feature, which would transfer the driver ID to be controlled by a new address.
+
+{Reactions}
+👍 
+
+[01/28/2023 16:03] h0wlu
+hmm i think you need to accept my friend request
+
+{Reactions}
+✅ 
+
+[01/30/2023 12:54] 0xpathfindr
+Hey @IgorZuk sent you a friend request
+
+{Reactions}
+✅ 
+
+[01/30/2023 15:50] Bjorn_Bug#3314
+@IgorZuk Can you please check your DM?
+
+{Reactions}
+✅ 
+
+[01/30/2023 19:59] chaduke3730
+how to understand this sentence? "// If the last update was not in the current cycle,
+            // there's only the single latest history entry to squeeze in the current cycle."
+
+
+[01/30/2023 20:11] xmxanuel
+Hi @chaduke,
+
+maybe it is the easiest with an example.  Imagine a cycle is 1 week.  I could stream to you since 10 weeks and might have changed the `amtPerSec` multiple times. 
+
+However, for squeezing it is only relevant, how often it has changed in the current cycle.  If I never changed my config in the current cycle the latest history entry (current config) is the only relevant one.
+
+{Reactions}
+👍 (2) 
+
+[01/31/2023 12:05] 0xpathfindr
+Is this the official app?
+
+
+[01/31/2023 12:05] 0xpathfindr
+https://app.drips.network/explore
+
+
+[01/31/2023 12:33] 0xpathfindr
+@IgorZuk ☝️
+
+
+[01/31/2023 12:34] xmxanuel
+@0xpathfindr  No, this is v1 of Drips
+
+
+[01/31/2023 12:34] igorzuk
+It's the official app for v0.1. For v2.0, the one which the contest is about is here: https://beta.drips.network/
+
+{Embed}
+https://beta.drips.network/
+Drips
+An Ethereum protocol for streaming and splitting funds, built by Radicle.
+Code4rena - ARCHIVE-Q1-2023 - drips-jan25 [1066127439526375444].txt_Files/social-share-88262.png
+
+
+[01/31/2023 12:35] 0xpathfindr
+Thanks.
+
+
+[01/31/2023 12:47] 0xpathfindr
+Is there a limit on the number of pausers that can be added to the list of pausers
+
+
+[01/31/2023 12:47] igorzuk
+No, it's unlimited.
+
+
+[01/31/2023 12:55] 0xpathfindr
+And each pause is isolated to a particular Drip Contract correct?
+
+
+[01/31/2023 12:56] igorzuk
+Yes, each `Managed` contract has a separate admin and a separate set of pausers.
+
+
+[01/31/2023 12:57] igorzuk
+This makes management of the entire ecosystem more cumbersome, but also more fine grained and more transparent.
+
+
+[01/31/2023 12:58] 0xpathfindr
+the pause() function is defined in Managed.sol but is not called in any of the contracts inside of src. How is a user who is a pauser able to call this function ? @IgorZuk
+
+
+[01/31/2023 12:59] igorzuk
+`pause` is public, it can be called directly from the outside
+
+{Reactions}
+👍 
+
+[01/31/2023 14:05] Bjorn_Bug#3314
+@IgorZuk Can you check your DM, please?
+
+{Reactions}
+✅ 
+
+[01/31/2023 17:30] mlome
+Can I get a reward for this? 😂
+
+{Attachments}
+Code4rena - ARCHIVE-Q1-2023 - drips-jan25 [1066127439526375444].txt_Files/image-F05AF.png
+
+{Reactions}
+😂 (3) 
+
+[01/31/2023 17:48] xmxanuel
+Thanks for sharing. We will discuss internally if it is a high severity typo. 😅
+
+{Reactions}
+👌 (3) 😂 (3) 
+
+[01/31/2023 17:54] igorzuk
+Watch out, now other contenders may file the same bug report! You should always PM things like this 😬
+
+
+[01/31/2023 19:46] 0xdaef0f
+How long will cycles be in production? 10 seconds?
+
+
+[01/31/2023 20:06] xmxanuel
+It is a trade-off. If it would be 10 seconds and a receiver wouldn't collect their stream for over a year. The gas-costs would be very high. We most likely will choose something like a `1 week`.  The `squeezeDrips` feature allows to receiveDrips with per second precision.
+
+
+[01/31/2023 20:07] immeas
+will you deploy multiple hubs with different cycle lengths?
+
+
+[01/31/2023 20:07] 0xdaef0f
+For loop all cycles 😵
+
+
+[01/31/2023 20:07] 0xdaef0f
+agree
+
+{Reactions}
+👍 
+
+[01/31/2023 20:25] igorzuk
+Probably not, we don't want to fracture the network. 7 days seems ok, it doesn't cost that much, receiving drips is refreshed not that rarely, and if you need to, you can always squeeze.
+
+
+[01/31/2023 20:45] adriro
+@IgorZuk can I dm?
+
+
+[01/31/2023 20:45] igorzuk
+Of course!
+
+
+[01/31/2023 22:08] chaduke3730
+is DripsHistory[] memory dripsHistory stored off-chain?
+
+
+[01/31/2023 22:35] xmxanuel
+We `emit` events for everything so it possible to reconstruct all information required together with the Graph.
+
+
+[01/31/2023 22:59] chaduke3730
+I see.
+
+{Reactions}
+👍 
+
+[01/31/2023 23:00] chaduke3730
+@xmxanuel
+
+
+[01/31/2023 23:01] chaduke3730
+@xmxanuelI have a private question dm you
+
+{Reactions}
+👍 
+
+[02/01/2023 18:07] danyams#9668
+@IgorZuk or @xmxanuel was hoping to dm one of you
+
+
+[02/01/2023 18:11] xmxanuel
+sure
+
+
+[02/01/2023 19:43] 0xsorrynotsorry
+I DM'ed you ser @xmxanuel
+
+{Reactions}
+👍 (2) 
+
+[02/02/2023 02:36] Aeros#7185
+Some big number math that someone else might find useful/interesting...
+
+
+[02/02/2023 02:38] Aeros#7185
+Splits and Drips can keep track of at most `type(uint128).max` of each asset. My immediate thought was "is it possible to overflow this?"
+
+
+[02/02/2023 02:39] Aeros#7185
+The long and the short of it is: NO. It's highly implausible. As far as I can tell, SHIBA INU is the token with the highest token supply cap of all ERC20 tokens, with a max supply of 999 nonillion, 990 octillion, 968 septillion, ... which we can round to 1 decillion.
+
+
+[02/02/2023 02:40] Aeros#7185
+`type(uint128).max` = 340 undecillion, 282 decillion, 366 nonillion, ... ~ 340,282 decillion
+
+
+[02/02/2023 02:42] Aeros#7185
+So even if you had the entire max circulating supply of the highest supply cap ERC20 token and put all of it into Splits/Drips you'd still be only about 1/340,282th of the way to hitting the max value.
+
+{Reactions}
+👍 (7) 
+
+[02/02/2023 02:45] Aeros#7185
+If any of the math here doesn't check out let me know
+
+
+[02/02/2023 08:39] xmxanuel
+As @IgorZuk already mentioned we will most likely deploy one version. However, I just wanted to mention a very low `cycleSecs` would have impact on the precision we support with `AMT_PER_SEC_MULTIPLIER` .  The trade-off is not only about gas-costs vs. getting funds earlier. 
+
+If the `cycleSecs=1` we effective would lose completely the precision. Which we need for tokens like `USDC` .  (10^6 precision). 
+
+```
+ int256 fullCycle = (int256(uint256(_cycleSecs)) * amtPerSec) / amtPerSecMultiplier;
+```
+
+It would mean the lowest technical possible `amtPerSec` would be `0.000001 USDC`. Which would be `~2.592 USDC` per month. (We obviously also want to support lower amtPerSecs for USDC)
+
+
+[02/02/2023 08:43] igorzuk
+We also check it in DripsHub, just to be sure 🙂 It doesn't let in more than `type(int128).max` of any asset.
+
+{Reactions}
+👍 (3) 
+
+[02/02/2023 08:44] xmxanuel
+We mention it in the docs, that obviously some tokens might cause problems with Drips. (like rebase token, etc).
+
+This is a good repo:
+https://github.com/d-xo/weird-erc20
+
+{Embed}
+https://github.com/d-xo/weird-erc20
+GitHub - d-xo/weird-erc20: weird erc20 tokens
+weird erc20 tokens. Contribute to d-xo/weird-erc20 development by creating an account on GitHub.
+Code4rena - ARCHIVE-Q1-2023 - drips-jan25 [1066127439526375444].txt_Files/weird-erc20-3CBC8
+
+
+[02/02/2023 16:18] caventa
+I DM'ed you @IgorZuk. Many thanks!
+
+{Reactions}
+👍 
+
+[02/02/2023 17:23] Aeros#7185
+Excellent point! The math nerd in me just wanted to see if it was even mathematically feasible... 🤓 😂
+
+
+[02/02/2023 19:26] evan#9648
+@IgorZuk @xmxanuel anyone available for a DM?
+
+{Reactions}
+👍 
+
+[02/03/2023 08:41] PrasadLak#0622
+@IgorZuk @xmxanuel I DM you. Pls check the PM
+
+{Reactions}
+👍 
+
+[02/03/2023 14:15] acegawd
+Dmed you @xmxanuel
+
+{Reactions}
+👍 
+
+[02/03/2023 15:57] xmxanuel
+I don't see it
+
+
+[02/03/2023 20:02] C4
+**🚨 CONTEST ALERT**
+
+@🐺wardens The **Drips Protocol** contest is now closed! Huge thanks to everyone who participated 🔍, whether you submitted a finding or not.
+
+What's next: The sponsor team and judge will review the findings over the next couple of weeks. Keep an eye on #📢announcements for regular updates on how the contest is progressing through awarding 🤑🏆, judging 🧑‍⚖️ and reporting 📜. Feel free to ping a gardener if you have questions along the way!
+
+{Reactions}
+4739_Skeletor (4) 🖖 (2) 
+
+[02/03/2023 20:04] beepidibop
+man, anyone found anything?
+I got pretty mind blown when I tested how they handle addresses (address->uint256->uint160) and it's actually more gas efficient than using address in a mapping directly
+
+{Reactions}
+❤️ (2) 🤟 
+
+[02/03/2023 20:05] chaduke3730
+This is a very good project, steaming on blockchains - discrete systems is very innovative and has a great market in this space.
+
+{Reactions}
+🔥 (2) ❤️ (2) 
+
+[02/03/2023 20:05] 0xdaef0f
+cleanest code i have ever seen fr fr no 🧢
+
+{Reactions}
+This (7) 💗 (4) 
+
+[02/03/2023 20:07] web3sec
+I reported a few bugs thou from my understanding 🤡
+
+{Reactions}
+👀 💪 (2) 
+
+[02/03/2023 20:08] timongty
+couldnt find anything 😂  
+was a good learning experience though
+
+{Reactions}
+❤️ (2) 
+
+[02/03/2023 20:20] prcolaco
+cool project, congrats! 🤙
+
+{Reactions}
+❤️ (2) 
+
+[02/03/2023 20:43] aba1842
+Seaport 1.2 was, to me, as clean as this. But yes, very clean, kudos to the devs and project auditors
+
+{Reactions}
+💗 (4) 
+
+[02/03/2023 20:48] 0xweiss
+On god no cap
+
+
+[02/03/2023 21:38] horsefacts
+Really enjoyed reading this one, too. Great balance of old school simplicity, advanced stuff like unstructured storage and offchain data hashing, and readability. :chefskiss:  I'm gonna point to Drips as an example for some of these patterns!
+
+{Reactions}
+💗 (22) 👀 (3) ☝️ (8) 
+
+[02/04/2023 11:26] smiling_heretic
+I'm impressed by high quality of Drips code, too.
+
+{Reactions}
+❤️ (3) 
+
+[02/04/2023 13:05] parsely.
+Thanks for letting us participate, the Devs can be proud of the code in my opinion it was very good
+
+{Reactions}
+❤️ (4) 
+
+[02/21/2023 17:45] devabdee
+Any update? We can expect the results at the end of Feb!? 👀
+
+
+[02/21/2023 18:57] alextheentreprenerd
+Possibly
+
+{Reactions}
+❤️ (4) 4739_Skeletor 
+
+[02/21/2023 19:14] ladboy233
+❤️‍🔥
+
+{Reactions}
+🫡 
+
+[02/21/2023 19:21] codingnamekiki
+:PU_FeelsWowMan:
+
+{Reactions}
+astrobadger 🔫 (2) adventurous_astronaut_competing (2) pogTasty 
+
+[02/27/2023 07:43] devabdee
+👀
+
+
+[02/27/2023 10:44] alextheentreprenerd
+Not earlier than Thursday
+
+{Reactions}
+🤞 (3) 👀 
+
+[02/27/2023 11:33] mgf15
+2/3 ?
+
+
+[03/01/2023 12:47] devabdee
+Hopefully 2 🙂🤞
+
+{Reactions}
+bog (2) praisethesun (2) bog (2) 
+
+[03/03/2023 09:34] xyzbtchunt
+👀 👀
+
+
+[03/03/2023 17:04] itsmetechjay
+:code4rena:  💸 🎉 Awards for **Drips Protocol**:
+
+$25,825.80 USDC » @evan 
+$21,049.36 USDC » @HollaDieWaldfee 
+$9,286.11 USDC » @Bernd 
+$6,946.02 USDC » @0xA5DF 
+$2,979.90 USDC » @Kaden 
+$1,910.76 USDC » @0xbepresent 
+$1,448.21 USDC » @descharre 
+$1,183.36 USDC » @IllIllI 
+$1,183.36 USDC » @rbserver 
+$893.97 USDC » @0xladboy | Sparkware 
+$254.79 USDC » @chaduke 
+$254.79 USDC » @0xSmartContract 
+$131.98 USDC » @Rolezn 
+$131.98 USDC » @ReyAdmirado 
+$131.98 USDC » @cryptostellar5 
+$131.98 USDC » @matrix_0wl 
+$131.98 USDC » @code-cipher 
+$131.98 USDC » @Deivitto 
+$131.98 USDC » @Noam Yakov 
+$122.82 USDC » @btk 
+$122.82 USDC » @fs0c 
+$122.82 USDC » @zzzitron 
+$122.82 USDC » @nalus  
+$122.82 USDC » @hihen 
+$122.82 USDC » @hansfriese 
+$122.82 USDC » SleepingBugs (@Deivitto, @0xLovesleep)
+
+🏁 Findings summary
+---------------------------
+High risk findings: 2 total, 1 unique
+Med risk findings: 5 total, 2 unique
+Gas reports: 11 
+QA reports: 15
+
+Awards will be distributed on Polygon within the next week. Congratulations, everyone! 💸 💸 💸
+
+*If you participated in this contest and don’t see your name on this list, please wait until the report is published and the findings repo is made public to check on your submissions.*
+
+{Reactions}
+😍 (12) 👏 (8) code4rena (7) hi5 (3) 🎉 (5) C4Keycap (4) Clap (5) cheers_badger (2) 🥳 
+
+[03/03/2023 17:27] ladboy233
+🥹
+
+{Reactions}
+pepemcdonalds (2) 😂 
+
+[03/03/2023 17:31] dadekuma
+wow, congrats to @evan and @HollaDieWaldfee for that huge high! And also congrats to everyone else! :chefskiss:
+
+{Reactions}
+thankyou 
+
+[03/03/2023 21:37] igorzuk
+A huge thank you to all the wardens who put their time and effort into reviewing our codebase! Congratulations to all the award winners, these were great findings, especially @evan and @HollaDieWaldfee, that bug was an incredible catch! Thank you to all the judges for moderation, reviewing and a **very** deep analysis of the filings when weighting them, you've done tremendous work! I can't recommend C4 enough, that was a wild ride 🔥
+
+{Reactions}
+👍 (22) 💜 (10) 🎉 (6) 🙏 (5) 
+
+[03/08/2023 12:26] murelel
+Hello,  is there any place to check all the submissions punctuation?
+
+
+[03/08/2023 15:02] itsmetechjay
+If you are asking about reviewing your submissions, please wait until the report is published and the findings repo is public.
+
+{Reactions}
+👍 
+
+[03/19/2023 12:05] saaj_110
+@Jay | C4 how can i know the reason for my submissions not accpeted...??
+
+
+[03/19/2023 14:01] alextheentreprenerd
+Tomorrow at office hours
+
+
+[03/19/2023 14:02] alextheentreprenerd
+https://discord.gg/7Kqt8deH?event=1085633840296505364
+
+{Reactions}
+596058680408145921 (8) thankyou (2) 
+
+[03/21/2023 16:00] 14si2o_flint
+@Jay | C4  I've just had the time to review my submissions and it appears my GO report was graded unsatisfactory simple because it did not save sufficient gas (8 minor savings for +-300 gas).
+
+I have no issue with this, but I was not aware of a minimum gas saved requirement for the GO report and I cannot find any reference to this in the documentation. 
+
+Is this contest specific? Is it communicated somewhere?
+
+
+[03/21/2023 16:07] alextheentreprenerd
+Happy Tuesday, was the judge for the contest, you can see the rules here:
+https://github.com/code-423n4/org/discussions/50
+
+{Embed}
+https://github.com/code-423n4/org/discussions/50
+Update to award formula, scoring, and contest rules · code-423n4 or...
+In the interest of increasing the upper end payouts, significantly disincentivizing sybil attacks and homework sharing, and eliminating low-effort submissions as an acceptable part of C4, we are im...
+
+{Reactions}
+thankyou 
+
+[03/21/2023 16:15] 14si2o_flint
+Thank you for the information.
+
+
+==============================================================
+Exported 140 message(s)
+==============================================================
